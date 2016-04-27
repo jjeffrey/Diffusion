@@ -17,5 +17,4 @@ def editGlossary(request):
 def integrate (request, terms):
 	tArray = terms.split('/')
 	tupArray = map(lambda x: tuple(x.split('-')), tArray)
-	print(tupArray[0])
 	return HttpResponse(", ".join(tArray))
