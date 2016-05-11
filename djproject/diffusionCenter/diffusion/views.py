@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from diffusio
 # Create your views here.
 from django.http import HttpResponse
 
@@ -11,7 +11,7 @@ def glossarySearch(request, query):
 		return HttpResponse(message)
 
 def editGlossary(request):
-	return HttpResponse("You're editing the glossary with a POST request, right?");
+	return HttpResponse("You're editing the glossary with a POST request, right?")
 # def setTrial(request, query="diffusion"):
 
 def integrate (request, terms):

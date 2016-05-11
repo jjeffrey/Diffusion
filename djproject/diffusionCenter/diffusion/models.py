@@ -18,7 +18,7 @@ class Treatment(models.Model):
 class Material(models.Model):
     name = models.CharField(max_length=50)
     short_name = models.CharField(max_length=10)
-    heat_transfer_coefficient = models.FloatField()
+    heat_transfer_coefficient = models.FloatField(default=0)
     thermal_conductivity = models.FloatField()
     melting_point = models.FloatField()
     additional_data = models.TextField() #A JSON (its fields may need to be later added to model)
