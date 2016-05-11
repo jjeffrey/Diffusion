@@ -1,6 +1,7 @@
 import math
 import numpy as np
 from scipy import integrate
+from scipy.special import erfc
 import matplotlib.pyplot as plt
 
 R = 8.3144598
@@ -20,9 +21,32 @@ def solvr(Y, t):
 def D(D0, Q, T):
 	return D0 * math.exp(-Q / (R * T))
 
+
+class DiffusionSystem(object):
+	def __init__(self, D0, Q, C0, C1):
+		self.D0 = D0
+		self.Q = Q
+		self.C0 = C0
+		self.C1 = C1
+
+	def concentrationAtTime(self, time, temperature=298):
+		D_actual = D(self.D0, self.Q, temperature)
+		return lambda x: ((self.C0 - self.C1) / 2) * erfc(x/(2 * math.sqrt(D_actual * time)))
+	def concentrationAtPoint(self, x, temperature=298):
+		D_actual = D(self.D0, self.Q, temperature)
+		return lambda time: ((self.C0 - self.C1) / 2) * erfc(x/(2 * math.sqrt(D_actual * time)))
 #if __name__ == "__main__":
 #	x2 = lambda x: x**2
 #	print(integrate.quad(x2, 0, 4))
 
 if __name__ == '__main__':
-    main()
+    #main()
+    ds = DiffusionSystem(0.006, 329, 1.0, 0.0)
+    concs = ds.concentrationAtTime(100, 1000)
+
+    t = np.arange(-5.0, 5.0, 0.001)
+    vconcs = np.vectorize(concs, otypes=[np.float])
+    results = vconcs(t)
+    print(results);
+    plt.plot(t,results)
+    plt.show()
