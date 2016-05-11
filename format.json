@@ -1,38 +1,38 @@
 {  
-   "name":"Standard Stackup",
-   "layers":[  
+   name:"Standard Stackup",
+   layers:[  
       {  
-         "metal":"Ti",
-         "thicknessInNano":100
+         metal:"Ti",
+         thicknessInNano:100
       },
       {  
-         "metal":"Al",
-         "thicknessInNano":100
+         metal:"Al",
+         thicknessInNano:100
       },
       {  
-         "metal":"Ni",
-         "thicknessInNano":100
+         metal:"Ni",
+         thicknessInNano:100
       },
       {  
-         "metal":"Au",
-         "thicknessInNano":100
+         metal:"Au",
+         thicknessInNano:100
       }
    ],
-   "annealingProcess":[  
+   annealingProcess:[  
       {  
-         "temperature": 400,
-         "time": 180
+         temperature: 400,
+         time: 180
       },
       {  
-         "temperature": 700,
-         "time": 30
+         temperature: 700,
+         time: 30
       },
       {  
-         "temperature": 830,
-         "time": 20
+         temperature: 830,
+         time: 20
       }
    ],
-   "keyframeTimes":[  
+   keyframeTimes:[  
       0,
       60,
       120,
@@ -43,5 +43,5 @@
       230,
       250
    ],
-   "heatTransferCoefficient": 300
+   heatTransferCoefficient: 300
 }
