@@ -47,6 +47,8 @@ if __name__ == '__main__':
     t = np.arange(-5.0, 5.0, 0.001)
     vconcs = np.vectorize(concs, otypes=[np.float])
     results = vconcs(t)
+    inverse = np.vectorize(lambda x: 1 - x)(results)
     print(results);
-    plt.plot(t,results)
+    plt.plot(t, results)
+    plt.plot(t, inverse)
     plt.show()
