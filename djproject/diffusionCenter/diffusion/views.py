@@ -1,14 +1,27 @@
 from django.shortcuts import render
-from diffusio
+from diffusion.models import ContactProfile, Treatment, Material, DiffusionRelation
 # Create your views here.
 from django.http import HttpResponse
+from django.template import loader
 
 def index(request):
-	return HttpResponse("Hello, world, you're at the diffusion center!")
+	material_list = Material.objects.order_by("short_name")
+	short_name_list = [material.short_name for material in material_list]
+	context = {
+		'short_name_list': short_name_list,
+	} 
+	print(material_list)
+	template = loader.get_template('main.html')
+	return HttpResponse(template.render(context, request))
 
 def glossarySearch(request, query):
-		message = 'You submitted: ' + query
-		return HttpResponse(message)
+	context = {
+		'material_list': Material.objects.order_by("short_name"),
+		#'relation_list': DiffusionRelation.order_by('diffusion_type').order_by('material_1').order_by('material_2')
+	} 
+	print(material_list)
+	template = loader.get_template('diffusion/templates/glossary.html')
+	return HttpResponse(template.render(context, request))
 
 def editGlossary(request):
 	return HttpResponse("You're editing the glossary with a POST request, right?")
