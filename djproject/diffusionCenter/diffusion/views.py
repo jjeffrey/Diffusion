@@ -15,13 +15,13 @@ def index(request):
 	return HttpResponse(template.render(context, request))
 
 def glossarySearch(request, query):
+	
 	context = {
 		'material_list': Material.objects.order_by("short_name"),
 		#'relation_list': DiffusionRelation.order_by('diffusion_type').order_by('material_1').order_by('material_2')
 	} 
-	print(material_list)
-	template = loader.get_template('diffusion/templates/glossary.html')
-	return HttpResponse(template.render(context, request))
+	#print(material_list)
+	return render(request, 'glossary.html', context)
 
 def editGlossary(request):
 	return HttpResponse("You're editing the glossary with a POST request, right?")

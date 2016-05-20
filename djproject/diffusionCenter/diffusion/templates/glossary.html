@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <head>
-	<title>Diffusion Center</title>
+	<title>Glossary - Diffusion Center</title>
 	{% include 'cdn_head.html' %}
+	<style>
+	.material_link {
+		text-transform: capitalize;
+	}
+	</style>
 </head>
 <body>
 	{% include 'header.html' %}
 	<h1>Glossary</h1>
-	<div class="dropdown">
-		<div class="row">
-		<div class="col-lg-2">Annealing Device</div>
-		<div class-"col-lg-2">
-			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default">Lamp</button>
-				<button type="button" class="btn btn-default">Furnance</button>
-			</div>
-		</div>
+	<h2>Materials</h2>
+	<div class="list-group">
+	{% for material in material_list %}
+		<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
+	{% endfor %}
 	</div>
 </body>
