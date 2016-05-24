@@ -2,19 +2,42 @@
 <head>
 	<title>Glossary - Diffusion Center</title>
 	{% include 'cdn_head.html' %}
+	{% include 'style_head.html' %}
 	<style>
-	.material_link {
-		text-transform: capitalize;
-	}
+		.material_link {
+			text-transform: capitalize;
+		}
 	</style>
 </head>
 <body>
 	{% include 'header.html' %}
-	<h1>Glossary</h1>
-	<h2>Materials</h2>
-	<div class="list-group">
-	{% for material in material_list %}
-		<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
-	{% endfor %}
+	<div class="container-fluid">
+		<h1>Glossary</h1>
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Materials</h2>
+				<div class="list-group">
+					{% for material in material_list %}
+					<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h2>Diffusion Relations</h2>
+				<div class="list-group">
+					{% for material in material_list %}
+					<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h2>Other</h2>
+				<div class="list-group">
+					{% for material in material_list %}
+					<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 	</div>
 </body>

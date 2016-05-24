@@ -2,17 +2,96 @@
 <head>
 	<title>Diffusion Center</title>
 	{% include 'cdn_head.html' %}
+	{% include 'style_head.html' %}
+	<style>
+		div.step,
+		div.step-1,
+		div.step-2,
+		div.step-3,
+		div.step-4 
+		{
+			background-color: #ffffff;
+			margin-left: 2px;
+			margin-right: 2px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+
+			border-radius: 15px;
+
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 1px;
+			padding-bottom: 1px;
+
+		}
+
+		div.step-1 {
+			border: 2px solid #008181;
+		}
+
+		div.step-2 {
+			border: 2px solid #008141;
+		}
+
+		div.step-3 {
+			border: 2px solid #9b0000;
+		}
+
+		div.step-4 {
+			border: 2px solid #810081;
+		}
+
+		span.step-title-1 {
+			color: #008181;
+		}
+
+		span.step-title-2 {
+			color: #008141;
+		}
+
+		span.step-title-3 {
+			color: #9b0000;
+		}
+
+		span.step-title-4 {
+			color: #810081;
+		}
+	</style>
 </head>
 <body>
 	{% include 'header.html' %}
-	<h1>Diffusion Center</h1>
-	<div class="dropdown">
+	<div class="container-fluid">
+		<h1>Diffusion Center</h1>
 		<div class="row">
-		<div class="col-lg-2">Annealing Device</div>
-		<div class-"col-lg-2">
-			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default">Lamp</button>
-				<button type="button" class="btn btn-default">Furnance</button>
+			<div class="col-md-3">
+				<div class="step-1">
+					<h3><span class="step-title-1">Step 1:</span> Define a Profile</h3>
+					<p>A profile consists of the order and thicknesses of the materials (generally metals)that are deposited onto one another. The program currently simulates profiles as infinite-area finite-depth sheets sequentially placed onto one another.</p>
+					<p> In order to define a profile, click <b>setup profile</b>.</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="step-2">
+					<h3><span class="step-title-2">Step 2:</span> Define an Annealing Process</h3>
+					<p>An annealing process consists of a series of temperatures the material profile is subjected to. The allowed temperature ranges are limited by those of the materials involved. </p>
+					<p> In order to define an annealing process, click <b>setup process</b>.</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="step-3">
+					<h3><span class="step-title-3">Step 3:</span> Run a Profile Thorugh a Process</h3>
+					<p>A profile can be run through a process as long as the temperature ranges are valid for each of its materials, and all diffusion relations between materials in the profile are defined (or fallback values are provided).</p>
+					<p>Results can be saved, and graphs are produced to show the diffusion.</p>
+					<p> In order to run a profile through an annealing process, click <b>run process</b>.</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+			<div class="step-4">
+					<h3><span class="step-title-4">Step 4:</span> View Anneal Results</h3>
+					<p></p>
+					<p>Results of anneal-induced diffusion can be saved, and graphs are produced to show the diffusion.</p>
+					<p> In order to view saved anneal results, click <b>saved results</b>.</p>
+				</div>
 			</div>
 		</div>
 	</div>
