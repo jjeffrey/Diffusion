@@ -3,6 +3,8 @@
 	<title>Diffusion Center</title>
 	{% include 'standard_head.html' %}
 	{% include 'style_head.html' %}
+	{% load staticfiles %}
+	<script src="{% static 'diffusion/js/setup_profile.js' %}"> </script>
 </head>
 <body>
 	{% include 'header.html' %}
@@ -15,7 +17,7 @@
 			</div>
 		</div>
 		<form action="/add_profile/" method="post">
-		{% csrf_token %}
+			{% csrf_token %}
 			<div class="row">
 				<div class="col-md-6">
 					<fieldset class="form-group">
@@ -24,8 +26,8 @@
 					</fieldset>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
+			<div class="row material_row">
+				<div class="col-md-4 material_sub" id="material_1">
 					<h4>Material 1</h4>
 
 					<fieldset class="form-group">
@@ -37,7 +39,7 @@
 						<input type="text" class="form-control" id="depth_1" placeholder="Another input">
 					</fieldset>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4 material_sub" id="material_2">
 					<h4>Material 2</h4>
 					<fieldset class="form-group">
 						<label for="mat_name_2">Material 2 Name</label>
@@ -48,9 +50,8 @@
 						<input type="text" class="form-control" id="depth_2" placeholder="Another input">
 					</fieldset>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
+
+				<div class="col-md-4 material_sub" id="material_3">
 					<h4>Material 3</h4>
 					<fieldset class="form-group">
 						<label for="mat_name_3">Material 3 Name</label>
@@ -61,7 +62,9 @@
 						<input type="text" class="form-control" id="depth_3" placeholder="Another input">
 					</fieldset>
 				</div>
-				<div class="col-md-6">
+			</div>
+			<div class="row material_row">
+				<div class="col-md-4 material_sub" id="material_4">
 					<h4>Material 4</h4>
 					<fieldset class="form-group">
 						<label for="mat_name_4">Material 4 Name</label>
@@ -75,7 +78,9 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<button type="submit" class="btn btn-primary">Add profile</button>
+					<button type="button" class="btn btn-primary" onclick="addLayer()">Add material layer</button>
+					<button type="button" class="btn btn-primary" onclick="removeLayer()">Remove material layer</button>
+					<button type="submit" class="btn btn-primary">Submit and save profile</button>
 				</div>
 			</div>
 		</form>
