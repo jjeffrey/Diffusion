@@ -1,3 +1,14 @@
-<link rel="stylesheet" href=templates/css/bootstrap.min.css">
-<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-<script src="templates/js/bootstrap.min.js"></script>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'diffusion/css/bootstrap.min.css' %}">
+<script src="{% static 'diffusion/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'diffusion/js/bootstrap.min.js' %}"></script>
+
+<style>
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: url("{% static 'diffusion/fonts/Exo_2/Exo2-Regular.ttf' %}");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+</style>

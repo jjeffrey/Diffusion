@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class ContactProfile(models.Model):
+    name = models.CharField(max_length=100)
     length_nm = models.IntegerField(default=50)
     profile = models.TextField()
 
@@ -35,4 +36,7 @@ class DiffusionRelation(models.Model):
     material_2 = models.CharField(max_length=10) #short_name of material in lower concentration
     additional_data = models.TextField() #A JSON (its fields may need to be later added to model)
 
-
+class AnnealRecord(models.Model):
+    profile_name = models.CharField(max_length=50)
+    treatment_name = models.CharField(max_length=100)
+    data = models.TextField() #A JSON (its fields may need to be later added to model)

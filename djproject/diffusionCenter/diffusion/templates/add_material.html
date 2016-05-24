@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+	<title>Diffusion Center</title>
+	{% include 'standard_head.html' %}
+	{% include 'style_head.html' %}
+</head>
+<body>
+	{% include 'header.html' %}
+	<div class="container-fluid">
+		<h1>Setup Material Profile</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<p>The profile is ordered where material 1 is is contact with material 2, material 2 is in contact with material 3, etc.</p>
+				<p>Thus, the entire profile is <b>| 1 || 2 || 3 || 4 |</b>.</p>
+			</div>
+		</div>
+		<form>
+			<div class="row">
+				<div class="col-md-6">
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput"><h4><b>Profile Name</b></h4></label>
+						<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Material 1</h4>
+
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput">Material 1 Name</label>
+						<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput2">Material 1 Depth (in microns)</label>
+						<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+					</fieldset>
+				</div>
+				<div class="col-md-6">
+					<h4>Material 2</h4>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput">Material 2 Name</label>
+						<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput2">Material 2 Depth (in microns)</label>
+						<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Material 3</h4>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput">Material 3 Name</label>
+						<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput2">Material 3 Depth (in microns)</label>
+						<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+					</fieldset>
+				</div>
+				<div class="col-md-6">
+					<h4>Material 4</h4>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput">Material 4 Name</label>
+						<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="formGroupExampleInput2">Material 4 Depth (in microns)</label>
+						<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-primary">Add profile</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>

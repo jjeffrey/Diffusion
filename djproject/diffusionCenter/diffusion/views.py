@@ -4,11 +4,14 @@ from diffusion.models import ContactProfile, Treatment, Material, DiffusionRelat
 from django.http import HttpResponse
 from django.template import loader
 
+use_cdn = False
+
 def index(request):
-	return render(request,'main.html')
+	return render(request,'main.html', {'use_cdn': use_cdn})
 
 def glossary_search(request, query=''):
 	context = {
+		'use_cdn': use_cdn,
 		'material_list': Material.objects.order_by("short_name"),
 		#'relation_list': DiffusionRelation.order_by('diffusion_type').order_by('material_1').order_by('material_2')
 	} 
@@ -26,19 +29,27 @@ def editGlossary(request):
 # 	return HttpResponse("<b>Input Data:</b>  " + ", ".join(tArray) + "<br><b>Parsed Polynomial:</b> " + " + ".join(t2Array))
 
 def setup_profile(request):
-	return render(request, 'profile_setup.html')
+	return render(request, 'profile_setup.html', {'use_cdn': use_cdn})
 
 def setup_process(request):
-	return render(request, 'process_setup.html')
+	return render(request, 'process_setup.html', {'use_cdn': use_cdn})
 
 def run_process(request):
-	return render(request, 'process_run.html')
+	return render(request, 'process_run.html', {'use_cdn': use_cdn})
 
 def saved_results(request):
-	return render(request, 'saved_results.html')
+	return render(request, 'saved_results.html', {'use_cdn': use_cdn})
 
 def add_material (request):
-	#if request.method == 'POST'
+	#if request.method == 'POST':
+	#else
+	return HttpResponse("hi")
+
+def add_relation (request):
+	#if request.method == 'POST':
+
+	#else:
+		#form = DiffusionForm
 	return HttpResponse("hi")
 
 def add_process(request):

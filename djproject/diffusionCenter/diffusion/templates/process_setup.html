@@ -1,26 +1,82 @@
 <!DOCTYPE html>
 <head>
 	<title>Diffusion Center</title>
-	{% include 'cdn_head.html' %}
+	{% include 'standard_head.html' %}
 	{% include 'style_head.html' %}
 </head>
 <body>
 	{% include 'header.html' %}
 	<div class="container-fluid">
 		<h1>Setup Annealing Process</h1>
-		<div class="dropdown">
-			<div class="row">
-				<div class="col-md-12"><b>TODO!</b></div>
-			</div>
-			<div class="row">
-				<div class="col-lg-2">Annealing Device</div>
-				<div class="col-lg-2">
-					<div class="btn-group" role="group" aria-label="...">
-						<button type="button" class="btn btn-default">Lamp</button>
-						<button type="button" class="btn btn-default">Furnance</button>
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-md-6">
+				<p>The anneal periods will be executed sequentially.</p>
 			</div>
 		</div>
+		<form action="/add_profile/" method="post">
+		{% csrf_token %}
+			<div class="row">
+				<div class="col-md-6">
+					<fieldset class="form-group">
+						<label for="name"><h4><b>Process Name</b></h4></label>
+						<input type="number" class="form-control" id="name" placeholder="Example input">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Anneal Period 1</h4>
+
+					<fieldset class="form-group">
+						<label for="temp_1">Temperature (in degrees Celsius)</label>
+						<input type="number" class="form-control" id="temp_1" placeholder="25">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="time_1">Time (in seconds)</label>
+						<input type="number" class="form-control" id="time_1" placeholder="10">
+					</fieldset>
+				</div>
+				<div class="col-md-6">
+					<h4>Anneal Period 2</h4>
+					<fieldset class="form-group">
+						<label for="temp_2">Temperature (in degrees Celsius)</label>
+						<input type="number" class="form-control" id="temp_2" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="time_2">Time (in seconds)</label>
+						<input type="number" class="form-control" id="time_2" placeholder="time_2">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Anneal Period 3</h4>
+					<fieldset class="form-group">
+						<label for="temp_3">Temperature (in degrees Celsius)</label>
+						<input type="number" class="form-control" id="temp_3" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="time_3">Time (in seconds)</label>
+						<input type="number" class="form-control" id="time_3" placeholder="Another input">
+					</fieldset>
+				</div>
+				<div class="col-md-6">
+					<h4>Anneal Period 4</h4>
+					<fieldset class="form-group">
+						<label for="temp_4">Temperature (in degrees Celsius)</label>
+						<input type="number" class="form-control" id="temp_4" placeholder="Example input">
+					</fieldset>
+					<fieldset class="form-group">
+						<label for="time_4">Time (in seconds)</label>
+						<input type="number" class="form-control" id="time_4" placeholder="Another input">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-primary">Add profile</button>
+				</div>
+			</div>
+		</form>
 	</div>
 </body>
