@@ -13,7 +13,7 @@ def glossary_search(request, query=''):
 	context = {
 		'use_cdn': use_cdn,
 		'material_list': Material.objects.order_by("short_name"),
-		#'relation_list': DiffusionRelation.order_by('diffusion_type').order_by('material_1').order_by('material_2')
+		'relation_list': DiffusionRelation.objects.order_by('material_1')
 	} 
 	#print(material_list)
 	return render(request, 'glossary.html', context)

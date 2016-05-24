@@ -10,5 +10,7 @@ urlpatterns = [
 	url(r'^setup-process/?$', views.setup_process),
 	url(r'^run-process/?$', views.run_process),
 	url(r'^saved-results/?$', views.saved_results),
+	url(r'^add-material/?$', views.add_material),
+	url(r'^add-relation/?$', views.add_relation),
 	url(r'^', views.index, name='index')
 ]

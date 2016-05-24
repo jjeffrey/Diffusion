@@ -25,17 +25,16 @@
 			<div class="col-md-4">
 				<h2>Diffusion Relations</h2>
 				<div class="list-group">
-					{% for material in material_list %}
-					<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
+					{% for relation in relation_list %}
+					<a href="#"" class="list-group-item material_link"> {{ relation.material_1 }}-{{ relation.material_2 }} Relation</a>
 					{% endfor %}
 				</div>
 			</div>
 			<div class="col-md-4">
 				<h2>Other</h2>
 				<div class="list-group">
-					{% for material in material_list %}
-					<a href="/glossary/{{ material.short_name }}/" class="list-group-item material_link"> {{ material.name }} </a>
-					{% endfor %}
+					<a href="#"" class="list-group-item material_link"> Diffusion Coefficient</a>
+					<a href="#"" class="list-group-item material_link"> Fick's Laws</a>
 				</div>
 			</div>
 		</div>
